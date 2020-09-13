@@ -27,7 +27,6 @@ Sub Summarize_Stock_Info():
     Cells(2, 14).Value = "Greatest % Increase"
     Cells(3, 14).Value = "Greatest % Decrease"
     Cells(4, 14).Value = "Greatest Total Volume"
-    Application.ActiveSheet.Columns("I:P").AutoFit
 
     
     'Loops through input tickers
@@ -96,5 +95,6 @@ Sub Summarize_Stock_Info():
         End If
     
     Next j
-    
+    Application.ActiveSheet.Columns("I:P").AutoFit
+
 End Sub

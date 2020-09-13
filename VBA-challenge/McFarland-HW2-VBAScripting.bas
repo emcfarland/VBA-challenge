@@ -79,7 +79,8 @@ Sub Summarize_Stock_Info():
         
     'Loops through output tickers
     For j = 2 To RowNum
-
+        
+        'Outputs maximum % change, minimum % change, maximum total volume, and associated tickers
         If Cells(j, 11).Value = Application.WorksheetFunction.Max(Range("K:K")) Then
             Cells(2, 15).Value = Cells(j, 9).Value
             Cells(2, 16).Value = Format(Cells(j, 11).Value, "Percent")

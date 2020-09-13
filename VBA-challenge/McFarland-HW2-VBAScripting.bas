@@ -2,7 +2,8 @@ Attribute VB_Name = "Module1"
 Sub Summarize_Stock_Info():
 
     Dim i As Long
-    
+    Dim j As Long
+        
     'Finds total number of rows used in sheet
     Dim RowCount As Long
     RowCount = ActiveSheet.UsedRange.Rows.Count
@@ -69,9 +70,27 @@ Sub Summarize_Stock_Info():
             
         End If
         
-        'Sums volume until above elseif is triggered, where it is reset for next ticker
+        'Sums volume until above if or elseif is triggered, where it is reset for next ticker
         volume = volume + Cells(i, 7).Value
-
+                
     Next i
+    
+    For j = 2 To RowCount
         
+        If Cells(j, 11).Value = Application.WorksheetFunction.Max(Range("K:K")) Then
+            Cells(2, 15).Value = Cells(j, 9).Value
+            Cells(2, 16).Value = Format(Cells(j, 11).Value, "Percent")
+        
+        ElseIf Cells(j, 11).Value = Application.WorksheetFunction.Min(Range("K:K")) Then
+            Cells(3, 15).Value = Cells(j, 9).Value
+            Cells(3, 16).Value = Format(Cells(j, 11).Value, "Percent")
+            
+        ElseIf Cells(j, 12).Value = Application.WorksheetFunction.Max(Range("L:L")) Then
+            Cells(4, 15).Value = Cells(j, 9).Value
+            Cells(4, 16).Value = Cells(j, 12).Value
+        
+        End If
+    
+    Next j
+    
 End Sub

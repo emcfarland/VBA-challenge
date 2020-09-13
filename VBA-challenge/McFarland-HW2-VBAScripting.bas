@@ -1,5 +1,5 @@
 Attribute VB_Name = "Module1"
-Sub iterate():
+Sub Summarize_Stock_Info():
 
     Dim i As Long
     
@@ -72,16 +72,6 @@ Sub iterate():
         'Sums volume until above elseif is triggered, where it is reset for next ticker
         volume = volume + Cells(i, 7).Value
 
-        If Cells(i, 10).Value > Cells(i - 1, 10).Value Then
-            Cells(i, 1).Value = Cells(2, 15).Value
-            Cells(i, 10).Value = Cells(2, 16).Value
-        
-        End If
-        
-
     Next i
-    
-    
-    
-    
+        
 End Sub

@@ -21,13 +21,13 @@ Sub Summarize_Stock_Info():
     Cells(1, 9).Value = "Ticker"
     Cells(1, 10).Value = "Price Change"
     Cells(1, 11).Value = "Percent Change"
-    Cells(1, 12).Value = "Total TotalVolume"
+    Cells(1, 12).Value = "Total Volume"
     Cells(1, 15).Value = "Ticker"
     Cells(1, 16).Value = "Value"
     Cells(2, 14).Value = "Greatest % Increase"
     Cells(3, 14).Value = "Greatest % Decrease"
-    Cells(4, 14).Value = "Greatest Total TotalVolume"
-    
+    Cells(4, 14).Value = "Greatest Total Volume"
+    Application.ActiveSheet.Columns("I:P").AutoFit
 
     
     'Loops through input tickers
